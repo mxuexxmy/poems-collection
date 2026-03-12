@@ -5,9 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>诗歌集 - 玄兴梦影</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="玄兴梦影的诗歌集，收录65首原创诗歌，涵盖爱情、人生、自然、亲情等主题。诗以言志，词以抒情。">
+    <meta name="keywords" content="诗歌,诗词,原创诗歌,玄兴梦影,沐雪程序员,中国诗歌">
+    <meta name="author" content="玄兴梦影">
+
+    <!-- Open Graph (社交媒体分享) -->
+    <meta property="og:title" content="诗歌集 - 玄兴梦影">
+    <meta property="og:description" content="诗以言志，词以抒情。收录65首原创诗歌。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mxuexxmy.github.io/poems-collection/">
+    <meta property="og:image" content="https://mxuexxmy.github.io/poems-collection/favicon.svg">
+    <meta property="og:locale" content="zh_CN">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="诗歌集 - 玄兴梦影">
+    <meta name="twitter:description" content="诗以言志，词以抒情">
+    <meta name="twitter:image" content="https://mxuexxmy.github.io/poems-collection/favicon.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mxuexxmy.github.io/poems-collection/">
+
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- 进度条 -->
+    <div class="progress-bar"></div>
+
+    <!-- 主题切换按钮 -->
+    <button id="themeToggle" class="theme-toggle" aria-label="切换主题">
+        <svg class="sun-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+        </svg>
+    </button>
+
+    <!-- 云纹装饰 -->
+    <div class="cloud-decoration cloud-top-left"></div>
+    <div class="cloud-decoration cloud-top-right"></div>
+    <div class="cloud-decoration cloud-bottom-left"></div>
+    <div class="cloud-decoration cloud-bottom-right"></div>
+
     <div class="container">
         <!-- 封面区域 -->
         <header class="cover">
@@ -17,6 +61,25 @@
             <p class="author">作者：玄兴梦影（笔名：沐雪程序员）</p>
             <p class="motto">Code is life, poetry is spirit. Be a poetic engineer.</p>
             <p class="motto-cn">代码是生活，诗歌是精神。做一个诗意的工程师。</p>
+
+            <!-- 搜索框 -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="搜索诗歌..." class="search-input">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+
+            <!-- 随机推荐按钮 -->
+            <button id="randomPoem" class="random-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path d="M17 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M7 7h10M7 12h10M7 17h6" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                随机推荐一首诗
+            </button>
+
             <div class="decorative-line bottom"></div>
         </header>
 
@@ -139,7 +202,25 @@
             </div>
 
             <article id="赏樱花" class="poem">
-                <h3 class="poem-title">赏樱花</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">赏樱花</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="赏樱花" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="赏樱花" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>天冷花开慢，心冷难敞开。</p>
@@ -150,7 +231,25 @@
             </article>
 
             <article id="短头发女孩" class="poem">
-                <h3 class="poem-title">短头发女孩</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">短头发女孩</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="短头发女孩" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="短头发女孩" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>梦见你长发飘飘模样</p>
@@ -163,7 +262,25 @@
             </article>
 
             <article id="致短发女孩" class="poem">
-                <h3 class="poem-title">致短发女孩</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">致短发女孩</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="致短发女孩" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="致短发女孩" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>烟雨蒙蒙的南国里</p>
@@ -187,7 +304,25 @@
             </article>
 
             <article id="致无名人" class="poem">
-                <h3 class="poem-title">致无名人</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">致无名人</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="致无名人" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="致无名人" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>烟雨蒙蒙的南国里</p>
@@ -211,7 +346,25 @@
             </article>
 
             <article id="我爱这一颗星" class="poem">
-                <h3 class="poem-title">我爱这一颗星</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">我爱这一颗星</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="我爱这一颗星" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="我爱这一颗星" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我爱这一颗星</p>
@@ -221,7 +374,25 @@
             </article>
 
             <article id="如果你是一颗星" class="poem">
-                <h3 class="poem-title">如果你是一颗星</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">如果你是一颗星</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="如果你是一颗星" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="如果你是一颗星" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>如果你是一颗星</p>
@@ -260,7 +431,25 @@
             </article>
 
             <article id="图书馆之恋" class="poem">
-                <h3 class="poem-title">图书馆之恋</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">图书馆之恋</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="图书馆之恋" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="图书馆之恋" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>末日越来越近</p>
@@ -292,7 +481,25 @@
             </article>
 
             <article id="但愿我是你的夏季" class="poem">
-                <h3 class="poem-title">但愿我是，你的夏季</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">但愿我是，你的夏季</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="但愿我是，你的夏季" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="但愿我是，你的夏季" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>但愿我是，你的夏季</p>
@@ -307,7 +514,25 @@
             </article>
 
             <article id="沉落星空" class="poem">
-                <h3 class="poem-title">沉落星空</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">沉落星空</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="沉落星空" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="沉落星空" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我自以为星星能——</p>
@@ -323,7 +548,25 @@
             </article>
 
             <article id="偷时光" class="poem">
-                <h3 class="poem-title">偷时光</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">偷时光</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="偷时光" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="偷时光" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>（一）</p>
@@ -346,7 +589,25 @@
             </article>
 
             <article id="偶然一" class="poem">
-                <h3 class="poem-title">偶然（一）</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">偶然（一）</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="偶然（一）" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="偶然（一）" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>摩天轮的沉默，不是我的沉默</p>
@@ -368,7 +629,25 @@
             </article>
 
             <article id="偶然二" class="poem">
-                <h3 class="poem-title">偶然（二）</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">偶然（二）</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="偶然（二）" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="偶然（二）" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>写一首小诗，在心头</p>
@@ -393,7 +672,25 @@
             </article>
 
             <article id="偶然三" class="poem">
-                <h3 class="poem-title">偶然（三）</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">偶然（三）</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="偶然（三）" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="偶然（三）" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>写一首小诗，在心头</p>
@@ -418,7 +715,25 @@
             </article>
 
             <article id="我愿在你身旁" class="poem">
-                <h3 class="poem-title">我愿在你身旁</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">我愿在你身旁</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="我愿在你身旁" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="我愿在你身旁" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>如果你来，你可否让我拥抱你</p>
@@ -440,7 +755,25 @@
             </article>
 
             <article id="编程式爱情" class="poem">
-                <h3 class="poem-title">编程式爱情</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">编程式爱情</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="编程式爱情" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="编程式爱情" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/沐雪程序员</p>
                 <div class="poem-content">
                     <p>落下的一行行代码</p>
@@ -467,7 +800,25 @@
             </article>
 
             <article id="我见过的唯一月亮" class="poem">
-                <h3 class="poem-title">我见过的唯一月亮</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">我见过的唯一月亮</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="我见过的唯一月亮" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="我见过的唯一月亮" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我见过的唯一月亮</p>
@@ -490,7 +841,25 @@
             </article>
 
             <article id="我想造一轮月" class="poem">
-                <h3 class="poem-title">我想造一轮月</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">我想造一轮月</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="我想造一轮月" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="我想造一轮月" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>太阳强势的爱</p>
@@ -522,7 +891,25 @@
             </article>
 
             <article id="雨说" class="poem">
-                <h3 class="poem-title">雨说</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">雨说</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="雨说" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="雨说" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>雨说</p>
@@ -545,7 +932,25 @@
             </article>
 
             <article id="离人愁" class="poem">
-                <h3 class="poem-title">离人愁</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">离人愁</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="离人愁" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="离人愁" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>逝去不再有，再来已无感。</p>
@@ -558,7 +963,25 @@
             </div>
 
             <article id="思考" class="poem">
-                <h3 class="poem-title">思考</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">思考</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="思考" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="思考" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>孩时，我梦想有一天走出大山。</p>
@@ -577,7 +1000,25 @@
             </article>
 
             <article id="雁过留声" class="poem">
-                <h3 class="poem-title">雁过留声</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">雁过留声</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="雁过留声" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="雁过留声" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>人已见、事完结、家也到。</p>
@@ -590,7 +1031,25 @@
             </article>
 
             <article id="借用" class="poem">
-                <h3 class="poem-title">借用</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">借用</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="借用" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="借用" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>有时，</p>
@@ -607,7 +1066,25 @@
             </article>
 
             <article id="选择" class="poem">
-                <h3 class="poem-title">选择</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">选择</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="选择" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="选择" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>如果可以选择</p>
@@ -617,7 +1094,25 @@
             </article>
 
             <article id="微寒玄梦" class="poem">
-                <h3 class="poem-title">微寒·玄梦</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">微寒·玄梦</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="微寒·玄梦" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="微寒·玄梦" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>寒风中颤抖，只为抱一归。天折磨后自折磨，樱花飘零，人自强。随遇而安不强求，便是四月好风景。</p>
@@ -626,7 +1121,25 @@
             </article>
 
             <article id="征途" class="poem">
-                <h3 class="poem-title">征途</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">征途</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="征途" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="征途" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>每一个地方是一个征途，</p>
@@ -644,7 +1157,25 @@
             </article>
 
             <article id="醒梦人生" class="poem">
-                <h3 class="poem-title">醒梦人生</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">醒梦人生</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="醒梦人生" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="醒梦人生" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我曾以为，做梦</p>
@@ -667,7 +1198,25 @@
             </article>
 
             <article id="醒梦人生番外篇" class="poem">
-                <h3 class="poem-title">醒梦人生——番外篇</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">醒梦人生——番外篇</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="醒梦人生——番外篇" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="醒梦人生——番外篇" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>此生太短</p>
@@ -681,7 +1230,25 @@
             </article>
 
             <article id="秘密" class="poem">
-                <h3 class="poem-title">秘密</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">秘密</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="秘密" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="秘密" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>天空飘过的云</p>
@@ -705,7 +1272,25 @@
             </article>
 
             <article id="重拾" class="poem">
-                <h3 class="poem-title">重拾</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">重拾</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="重拾" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="重拾" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>黎明到来星会掩藏</p>
@@ -729,7 +1314,25 @@
             </article>
 
             <article id="我只是来参观的" class="poem">
-                <h3 class="poem-title">我只是来参观的</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">我只是来参观的</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="我只是来参观的" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="我只是来参观的" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我只是来参观</p>
@@ -760,7 +1363,25 @@
             </article>
 
             <article id="医生" class="poem">
-                <h3 class="poem-title">医生</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">医生</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="医生" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="医生" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>医好天下病的他</p>
@@ -791,7 +1412,25 @@
             </article>
 
             <article id="与树说诗的程序员" class="poem">
-                <h3 class="poem-title">与树说诗的程序员</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">与树说诗的程序员</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="与树说诗的程序员" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="与树说诗的程序员" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我只是来参观</p>
@@ -823,7 +1462,25 @@
             </article>
 
             <article id="我想用程序描述人生" class="poem">
-                <h3 class="poem-title">我想用程序描述人生</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">我想用程序描述人生</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="我想用程序描述人生" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="我想用程序描述人生" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>秋天还没过去，冬天已急迫的赶来</p>
@@ -849,7 +1506,25 @@
             </article>
 
             <article id="天未亮夜未黑" class="poem">
-                <h3 class="poem-title">天未亮，夜未黑</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">天未亮，夜未黑</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="天未亮，夜未黑" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="天未亮，夜未黑" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>黎明，是夜未黑的把柄</p>
@@ -876,7 +1551,25 @@
             </article>
 
             <article id="逃离" class="poem">
-                <h3 class="poem-title">逃离</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">逃离</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="逃离" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="逃离" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我曾经奢望有一天拥有你</p>
@@ -901,7 +1594,25 @@
             </article>
 
             <article id="我把爱丢了" class="poem">
-                <h3 class="poem-title">我把爱丢了</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">我把爱丢了</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="我把爱丢了" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="我把爱丢了" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>一个丢三落四的人</p>
@@ -923,7 +1634,25 @@
             </div>
 
             <article id="归途" class="poem">
-                <h3 class="poem-title">归途</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">归途</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="归途" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="归途" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>寒风微微冷，今飘入安南。</p>
@@ -932,7 +1661,25 @@
             </article>
 
             <article id="大方游" class="poem">
-                <h3 class="poem-title">大方游</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">大方游</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="大方游" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="大方游" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>飞到百里望杜鹃，游到门口往回返。</p>
@@ -941,7 +1688,25 @@
             </article>
 
             <article id="九格洞" class="poem">
-                <h3 class="poem-title">九格洞</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">九格洞</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="九格洞" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="九格洞" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>初三九格洞，人山人海游。</p>
@@ -952,7 +1717,25 @@
             </article>
 
             <article id="幻梦九月" class="poem">
-                <h3 class="poem-title">幻梦九月</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">幻梦九月</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="幻梦九月" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="幻梦九月" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>九月叶黄虽比不上三月百花五彩缤纷。</p>
@@ -972,7 +1755,25 @@
             </article>
 
             <article id="夏季天空" class="poem">
-                <h3 class="poem-title">夏季天空</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">夏季天空</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="夏季天空" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="夏季天空" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>窗外，下着六月的雨</p>
@@ -987,7 +1788,25 @@
             </article>
 
             <article id="惬意午后" class="poem">
-                <h3 class="poem-title">惬意午后</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">惬意午后</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="惬意午后" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="惬意午后" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>炙热的太阳</p>
@@ -1009,7 +1828,25 @@
             </article>
 
             <article id="一个人的午后" class="poem">
-                <h3 class="poem-title">一个人的午后</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">一个人的午后</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="一个人的午后" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="一个人的午后" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我累</p>
@@ -1036,7 +1873,25 @@
             </article>
 
             <article id="相约德溪" class="poem">
-                <h3 class="poem-title">相约德溪</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">相约德溪</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="相约德溪" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="相约德溪" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>春天把花儿洒落</p>
@@ -1063,7 +1918,25 @@
             </article>
 
             <article id="我踏着彩霞归来" class="poem">
-                <h3 class="poem-title">我踏着彩霞归来</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">我踏着彩霞归来</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="我踏着彩霞归来" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="我踏着彩霞归来" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我踏着彩霞归来</p>
@@ -1086,7 +1959,25 @@
             </article>
 
             <article id="程序员的秋" class="poem">
-                <h3 class="poem-title">程序员的秋</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">程序员的秋</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="程序员的秋" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="程序员的秋" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>秋天还没过去，冬天已急迫的赶来</p>
@@ -1116,7 +2007,25 @@
             </div>
 
             <article id="赠宝东" class="poem">
-                <h3 class="poem-title">赠宝东</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">赠宝东</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="赠宝东" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="赠宝东" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>天空朦朦雨，山水不分离。</p>
@@ -1127,7 +2036,25 @@
             </article>
 
             <article id="父亲" class="poem">
-                <h3 class="poem-title">父亲</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">父亲</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="父亲" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="父亲" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我居住的天堂</p>
@@ -1172,7 +2099,25 @@
             </article>
 
             <article id="三人行" class="poem">
-                <h3 class="poem-title">三人行</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">三人行</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="三人行" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="三人行" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">——致当当与东东</p>
                 <div class="poem-content">
                     <p>我想尽各种句词</p>
@@ -1200,7 +2145,25 @@
             </article>
 
             <article id="致新颖或一群奋斗的人" class="poem">
-                <h3 class="poem-title">致新颖或一群奋斗的人</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">致新颖或一群奋斗的人</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="致新颖或一群奋斗的人" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="致新颖或一群奋斗的人" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>如果看到我趴在一丛三叶草</p>
@@ -1227,7 +2190,25 @@
             </article>
 
             <article id="致军人" class="poem">
-                <h3 class="poem-title">致军人</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">致军人</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="致军人" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="致军人" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>我的室友，你是一个军人</p>
@@ -1248,7 +2229,25 @@
             </article>
 
             <article id="兄弟今夜什么都不说" class="poem">
-                <h3 class="poem-title">兄弟，今夜什么都不说</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">兄弟，今夜什么都不说</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="兄弟，今夜什么都不说" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="兄弟，今夜什么都不说" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>兄弟，今夜什么都不说</p>
@@ -1273,7 +2272,25 @@
             </article>
 
             <article id="今夜我一人或致室友" class="poem">
-                <h3 class="poem-title">今夜，我一人或致室友</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">今夜，我一人或致室友</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="今夜，我一人或致室友" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="今夜，我一人或致室友" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>今夜，我一人</p>
@@ -1295,7 +2312,25 @@
             </article>
 
             <article id="远方的来电" class="poem">
-                <h3 class="poem-title">远方的来电</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">远方的来电</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="远方的来电" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="远方的来电" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>如果远方不远</p>
@@ -1309,7 +2344,25 @@
             </div>
 
             <article id="2017贵工程" class="poem">
-                <h3 class="poem-title">2017·贵工程</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">2017·贵工程</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="2017·贵工程" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="2017·贵工程" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>毕节兮夜，灯相思，念念亮，珍惜且停留。</p>
@@ -1319,7 +2372,25 @@
             </article>
 
             <article id="凌晨一点半" class="poem">
-                <h3 class="poem-title">凌晨一点半</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">凌晨一点半</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="凌晨一点半" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="凌晨一点半" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>一点半的凌晨</p>
@@ -1362,7 +2433,25 @@
             </article>
 
             <article id="七星关纪事关关有情" class="poem">
-                <h3 class="poem-title">七星关纪事·关关有情</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">七星关纪事·关关有情</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="七星关纪事·关关有情" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="七星关纪事·关关有情" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>曾经走过鬼门关，感恩自此怀心中。萧峰难解雁门关，跳下悬崖又奈何。心若在，梦就在。</p>
@@ -1375,7 +2464,25 @@
             </div>
 
             <article id="独夜" class="poem">
-                <h3 class="poem-title">独夜</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">独夜</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="独夜" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="独夜" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>夜下有一人走过</p>
@@ -1396,7 +2503,25 @@
             </article>
 
             <article id="幻夜" class="poem">
-                <h3 class="poem-title">幻夜</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">幻夜</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="幻夜" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="幻夜" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>银色刀光</p>
@@ -1422,7 +2547,25 @@
             </article>
 
             <article id="写给夜" class="poem">
-                <h3 class="poem-title">写给夜</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">写给夜</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="写给夜" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="写给夜" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>有个影子一直陪着你</p>
@@ -1437,7 +2580,25 @@
             </article>
 
             <article id="小窗" class="poem">
-                <h3 class="poem-title">小窗</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">小窗</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="小窗" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="小窗" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>童年</p>
@@ -1458,7 +2619,25 @@
             </div>
 
             <article id="相遇懒猫微服" class="poem">
-                <h3 class="poem-title">相遇懒猫微服</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">相遇懒猫微服</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="相遇懒猫微服" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="相遇懒猫微服" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>此生太短</p>
@@ -1474,7 +2653,25 @@
             </article>
 
             <article id="回家" class="poem">
-                <h3 class="poem-title">回家</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">回家</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="回家" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="回家" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>懒猫微服</p>
@@ -1484,7 +2681,25 @@
             </article>
 
             <article id="腊八节在黔西" class="poem">
-                <h3 class="poem-title">腊八节，在黔西</h3>
+                        <div class="poem-header">
+            <h3 class="poem-title">腊八节，在黔西</h3>
+                        <div class="poem-actions">
+            <button class="copy-btn" data-poem-id="腊八节，在黔西" title="复制诗歌">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-poem-id="腊八节，在黔西" title="分享链接">
+                <svg viewBox="0 0 24 24" width="16" height="16">
+                    <circle cx="18" cy="5" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="6" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="18" cy="19" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+        </div>
                 <p class="poem-author">文/玄兴梦影</p>
                 <div class="poem-content">
                     <p>腊八节，在黔西</p>
@@ -1529,40 +2744,5 @@
                 <path d="M12 19V5M5 12l7-7 7 7"/>
             </svg>
         </button>
-    </div>
-
-    <script>
-        // 返回顶部按钮
-        const backToTop = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

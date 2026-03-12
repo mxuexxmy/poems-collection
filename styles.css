@@ -478,3 +478,331 @@ body {
     background-color: rgba(201, 55, 55, 0.2);
     color: var(--text-ink);
 }
+
+/* ========================================
+   新增交互功能样式
+   ======================================== */
+
+/* --- 深色主题变量 --- */
+[data-theme="dark"] {
+    --bg-paper: #1a1a1a;
+    --bg-paper-alt: #252525;
+    --text-ink: #e8e8e8;
+    --text-ink-light: #c8c8c8;
+    --text-ink-lighter: #a0a0a0;
+    --border-ink: #3a3a3a;
+}
+
+/* 系统偏好自动适配 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg-paper: #1a1a1a;
+        --bg-paper-alt: #252525;
+        --text-ink: #e8e8e8;
+        --text-ink-light: #c8c8c8;
+        --text-ink-lighter: #a0a0a0;
+        --border-ink: #3a3a3a;
+    }
+}
+
+/* --- 阅读进度条 --- */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-green));
+    width: 0%;
+    transition: width 0.1s ease;
+    z-index: 1001;
+}
+
+/* --- 主题切换按钮 --- */
+.theme-toggle {
+    position: fixed;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--border-ink);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+.theme-toggle svg {
+    width: 22px;
+    height: 22px;
+    color: var(--text-ink);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle {
+        background: rgba(26, 26, 26, 0.9);
+    }
+}
+
+/* --- 云纹装饰 --- */
+.cloud-decoration {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.cloud-decoration::before,
+.cloud-decoration::after {
+    content: '';
+    position: absolute;
+    background: var(--accent-red);
+    border-radius: 50%;
+}
+
+.cloud-top-left { top: 50px; left: 50px; }
+.cloud-top-right { top: 50px; right: 50px; }
+.cloud-bottom-left { bottom: 50px; left: 50px; }
+.cloud-bottom-right { bottom: 50px; right: 50px; }
+
+.cloud-decoration::before {
+    width: 80px;
+    height: 80px;
+    top: 35px;
+    left: 35px;
+}
+
+.cloud-decoration::after {
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    left: 45px;
+}
+
+/* --- 搜索框样式 --- */
+.search-container {
+    position: relative;
+    max-width: 400px;
+    margin: var(--spacing-md) auto 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-right: 3rem;
+    border: 2px solid var(--border-ink);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 3px rgba(201, 55, 55, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--text-ink-lighter);
+    pointer-events: none;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: var(--spacing-xs);
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none;
+}
+
+.search-results.show {
+    display: block;
+}
+
+.search-result-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-ink);
+}
+
+.search-result-item:hover {
+    background: var(--bg-paper);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-highlight {
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+.no-results {
+    padding: var(--spacing-md);
+    text-align: center;
+    color: var(--text-ink-lighter);
+}
+
+/* --- 随机推荐按钮 --- */
+.random-btn {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--accent-red);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: all 0.3s ease;
+}
+
+.random-btn:hover {
+    background: var(--accent-red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(201, 55, 55, 0.3);
+}
+
+.random-btn svg {
+    flex-shrink: 0;
+}
+
+/* --- 诗歌卡片头部 --- */
+.poem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.poem-header .poem-title {
+    margin-bottom: 0;
+}
+
+/* --- 诗歌操作按钮 --- */
+.poem-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.copy-btn,
+.share-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-ink);
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--text-ink-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.copy-btn:hover,
+.share-btn:hover {
+    background: var(--accent-red);
+    color: white;
+    border-color: var(--accent-red);
+}
+
+.copy-btn svg,
+.share-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Toast 提示 --- */
+.toast {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--text-ink);
+    color: var(--bg-paper);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    opacity: 0;
+    animation: toast-in-out 2s ease forwards;
+    z-index: 2000;
+}
+
+@keyframes toast-in-out {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    15% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    85% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
+
+/* --- 滚动淡入动画 --- */
+.poem {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.poem.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 覆盖原有的 hover 效果 */
+.poem.visible:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* --- 搜索高亮动画 --- */
+@keyframes highlight-pulse {
+    0%, 100% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); }
+    50% { box-shadow: 0 4px 24px rgba(201, 55, 55, 0.3); transform: scale(1.02); }
+}
+
+.search-highlight {
+    animation: highlight-pulse 0.5s ease;
+}
