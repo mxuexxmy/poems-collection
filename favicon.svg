@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <filter id="roughness">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- 外圆 - 印章边框 -->
+  <circle cx="32" cy="32" r="30" fill="#c93737"/>
+
+  <!-- 内圆 - 装饰线 -->
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#f5f0e6" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- 印章文字背景 - 稍微不规则以模拟印章效果 -->
+  <g filter="url(#roughness)" opacity="0.1">
+    <circle cx="32" cy="32" r="24" fill="#000"/>
+  </g>
+
+  <!-- "诗"字 -->
+  <text x="32" y="44"
+        font-family="'Noto Serif SC', 'Source Han Serif SC', 'STSong', 'SimSun', serif"
+        font-size="32"
+        font-weight="bold"
+        fill="#f5f0e6"
+        text-anchor="middle">诗</text>
+
+  <!-- 小印章装饰点 -->
+  <circle cx="32" cy="52" r="1.5" fill="#f5f0e6" opacity="0.6"/>
+</svg>
