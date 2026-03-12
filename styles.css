@@ -101,6 +101,22 @@ body {
     font-style: italic;
 }
 
+.motto {
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    margin-top: var(--spacing-sm);
+    font-family: "Georgia", "Times New Roman", serif;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+}
+
+.motto-cn {
+    font-size: 0.85rem;
+    color: var(--text-ink-lighter);
+    margin-top: var(--spacing-xs);
+    font-style: normal;
+}
+
 .decorative-line {
     width: 120px;
     height: 2px;
@@ -343,6 +359,14 @@ body {
 
     .subtitle {
         font-size: 1rem;
+    }
+
+    .motto {
+        font-size: 0.85rem;
+    }
+
+    .motto-cn {
+        font-size: 0.8rem;
     }
 
     .toc-content {
